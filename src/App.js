@@ -1,26 +1,14 @@
-import logo from './logo.svg';
+import { routes } from './Routes';
+import { useRoutes } from 'react-router-dom';
+import { AuthProvider } from './AuthProvider';
+
 import './App.css';
 
 function App() {
-  console.log('submodule log');
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  console.log('submodule project');
+  const routing = useRoutes(routes());
+
+  return <AuthProvider>{routing}</AuthProvider>;
 }
 
 export default App;
